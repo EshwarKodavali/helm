@@ -1,6 +1,6 @@
 deployment:
   replicas: 4
-  imageversion: latest
+  imageversion: trixie-perl
 service:
   type: LoadBalancer
   port: 80
