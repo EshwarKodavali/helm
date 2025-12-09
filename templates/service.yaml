@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-lb
+spec:
+  type: {{ .Values.service.type }}
+  selector:
+    purpose: dp-demo
+    project: roboshop
+  ports:
+    - protocol: TCP
+      port: {{ .Values.service.port }} # service port
+      targetPort: 80 # container port
+      nodePort: 31000
